@@ -20,5 +20,32 @@ console.log(valueInBool);
 "kamal" => true
 */
 
+////////////CONVERSION///////
+let value = 5;
+let negValue = -value;
+console.log(negValue);
+
+let str1 = "kamal";
+let str2 = " khandal";
+console.log(str1 + str2);
+
+
+console.log("1" + 2); //12
+console.log(1 + "2"); //12
+console.log("1" + 2 + 2); //122
+console.log(2 + 2 + "1"); //41
+
+
+// prefix & postfix
+
+let x = 5;
+let y = x++;
+console.log(x + " " + y); //postfix increment, increments the value and returns the value before incrementing
+
+let a = 1;
+let b = ++a;
+console.log(a + " " + b); //prefix increment, increments the value and returns the value after incrementing.
+
+
 
 
