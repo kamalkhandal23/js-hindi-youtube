@@ -41,3 +41,27 @@ console.log(id === id2);  //false bcz symbol provides uniqueness
     console.log("Hellow World");
  }
  
+
+ /* ----------------Memory---------------------
+ 1. Stack (Primitive Datatypes) get stored in stack memory, it shares the copy.
+ 2. Heap (Non-Primitive Datatypes) get stored in heap memory, it share the direct referance.
+ */
+
+ let ytName = "trading titans";
+ let ytName2 = ytName;
+ ytName2 = "trade with kamal";
+ console.log(ytName);
+ console.log(ytName2);
+
+ let userOne = {
+   email : "kamalsh684@gmail.com",
+   upi : "khandalkamal@ybl"
+ }
+
+ let userTwo = userOne;
+ userTwo.email = "statusbykamal@gmail.com"
+ console.log(userOne.email);
+ console.log(userTwo.email);
+ 
+ 
+ 
