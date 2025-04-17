@@ -32,46 +32,90 @@
 </body>
 <script>
     // document.getElementById('owl').onclick = function(){
-    //     alert("Owl")
+    //     alert("Why are you touching me, boy");
     // }
 
-    // document.getElementById('owl').addEventListener('click', function(e){
+    // document.getElementById('owl').addEventListener('click',function(){
+    //     alert("Why are you touching me again and again")
+    // })
+
+
+
+    // document.getElementById('owl').addEventListener('click',function(e){
     //     console.log(e);
-        
     // },false)
+    
+    //type of events
+    //timestamp
+    //defaultPrevented
+    //target
+    //toElement
+    //srcElement
+    //currentTarget
+    //clientX, ClientY
+    //screenX, screenY
+    //altKey, ctrlKey, shiftKey, KeyCode
 
-    //type, timestamp, defaultPrevented
-    //target, toElement, srcELement, currentTarget
-    //clientX, clientY, screenX, screenY
-    //altKey, ctrlKey, shiftKey, keyCode
+    //EVENT PROPAGATION : 1. Bubbling(calls itself first then parents)      2. Capturing(parents get called first then childs)
 
 
-    document.getElementById('images').addEventListener('click', (e) => {
-        console.log("Clicked inside the UL");
-    },false);
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("clicked inside the ul");
+    // },false);
 
-    // document.getElementById('owl').addEventListener('click',(e) => {
-    //     console.log("Clicked on the owl");
-    //     e.stopPropagation()  //it prevents the propagation
-    // }, false)    //true and false are called event propagation
+    // document.getElementById('owl').addEventListener('click',function(e){
+    //     console.log("clicked on the owl");
+        
+    // },false);
+
+
+
+    //false/false : bubble means inside to outside. Child->Parent
     
 
+   // document.getElementById('images').addEventListener('click',function(e){
+  //      console.log("clicked inside the ul");
+  //  },true);
 
-    document.getElementById('google').addEventListener('click',(e) => {
-        e.preventDefault();
-        e.stopPropagation();
-        console.log("google clicked");
-    })
+  //  document.getElementById('japan').addEventListener('click',function(e){
+  //      console.log("clicked on the japan");
+        
+  //  },true);
+
+    //true/true : capturing means outside to inside. parent->child
 
 
+    //We can stop the bubbling by using e.stopPropagation()
 
-    document.querySelector('#images').addEventListener('click',(e)=>{
-        let removeIt = e.target.parentNode;
+    // document.getElementById('images').addEventListener('click',function(e){
+    //     console.log("clicked inside the ul");
+    // },false);
+
+    // document.getElementById('japan').addEventListener('click',function(e){
+    //     console.log("clicked on the japan");
+    //     e.stopPropagation();
+    // },false);
+
+
+    //e.preventDefault() this method cancels the default action
+    //  meaning that the default action that belongs to the event will not occur.
+
+    // document.getElementById('google').addEventListener('click',function(e){
+    //     console.log("Clicked on Google");
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    // },false)
+
+    //Remove the image when we click on the image
+
+    document.getElementById('images').addEventListener('click',function(e){
+        console.log(e.target.tagName);
         if(e.target.tagName === 'IMG'){
-            removeIt.remove();
+            console.log(e.target.id);
+            const removal = e.target.parentNode;
+            removal.remove();
         }
-        //removeIt.parentNode.removeChild(removeIt);
-    })
+    },false)
 </script>
 
 </html>
