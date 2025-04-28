@@ -12,13 +12,21 @@
         <img src="https://static.toiimg.com/thumb/msid-119223479,width-1280,height-720,imgsize-19614,resizemode-6,overlay-toi_sw,pt-32,y_pad-40/photo.jpg"
             alt="" srcset="">
     </div>
+    <div id="click-me">
+        <a href="https://www.youtube.com/" id="youtube">YOUTUBE</a>
+    </div>
 </body>
 <script>
-    document.getElementById('mainn').addEventListener('click',function(e){
-        //console.log(e.type); //click event
+    // document.getElementById('mainn').addEventListener('click', function (e) {
+    //     //console.log(e.type); //click event
 
-        console.log(e.timeStamp); //checks the timing of event when it happens
-        
+    //     // console.log(e.timeStamp); //checks the timing of event when it happens
+
+    // })
+
+    document.getElementsById('mainn').addEventListener('click', function(e) {
+        console.log(e.target.id);
     })
 </script>
+
 </html>
